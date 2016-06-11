@@ -9,7 +9,7 @@ touch $bashName.sh
 echo "# !/bin/bash">>$bashName.sh
 #换行
 sed '/$/a\\n' $bashName.sh
-# 定义作者
+# 定义作者,默认采用当前登陆用户
 echo "# @author: `who|cut -d ' ' -f1`">>$bashName.sh
 sed  '/$/a\\n' $bashName.sh
 # 时间
