@@ -7,8 +7,9 @@ bashName=$1
 if [ ! -f "$bashName.sh" ];then
 #创建shell文件
 touch $bashName.sh
+	#判断是否成功的创建
 	if [  -f $bashName.sh ];then
-		echo "$bashName.sh created right!"
+		echo "$bashName.sh created succussfully!"
 	else
 		echo "create failed!"
 	fi
