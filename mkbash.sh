@@ -9,19 +9,19 @@ if [ ! -f "$bashName.sh" ];then
 touch $bashName.sh
 	#判断是否成功的创建
 	if [  -f $bashName.sh ];then
-		echo "$bashName.sh created succussfully!"
+		#定义shell类型，采用bash
+		echo "# !/bin/bash">>$bashName.sh
+		#换行
+		# 定义作者,默认采用当前登陆用户
+		echo "# @author: `who|cut -d ' ' -f1`">>$bashName.sh
+		# 时间
+		echo "# @date:`date`">>$bashName.sh
+		#作用
+		echo "# 作用：">>$bashName.sh
+		echo "$bashName.sh created succuessfully!"
 	else
-		echo "create failed!"
+		echo "creat bash falied"
 	fi
-#定义shell类型，采用bash
-echo "# !/bin/bash">>$bashName.sh
-#换行
-# 定义作者,默认采用当前登陆用户
-echo "# @author: `who|cut -d ' ' -f1`">>$bashName.sh
-# 时间
-echo "# @date:`date`">>$bashName.sh
-#作用
-echo "# 作用：">>$bashName.sh
 else
 	echo "$bashName.sh is exited!"
 fi
